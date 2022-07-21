@@ -38,8 +38,12 @@
     /** @param {number|string} number */
     const CheckNumber = (number) => {
         const _obj = {
-            isEven: isEven(number),
-            isOdd: isOdd(number)
+            get isEven() {
+                return isEven(number);
+            },
+            get isOdd() {
+                return isOdd(number);
+            }
         };
         return _obj;
     };
