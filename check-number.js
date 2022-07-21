@@ -35,9 +35,39 @@
         return false;
     };
 
+    /**
+     * @param {string|number} maxNumber 
+     * @returns {number[]} 
+     */
+    const getEven = (maxNumber) => {
+        let result = [];
+        for (let i = 2; i <= maxNumber; i++) {
+            if (i % 2 === 0) {
+                result.push(i);
+            }
+        }
+        return result.reverse();
+    };
+
+    /**
+    * @param {string|number} maxNumber 
+    * @returns {number[]} 
+    */
+    const getOdd = (maxNumber) => {
+        let result = [];
+        for (let i = 2; i <= maxNumber; i++) {
+            if (i % 2 !== 0) {
+                result.push(i);
+            }
+        }
+        return result.reverse();
+    };
+
     /** @param {number|string} number */
     const CheckNumber = (number) => {
         const _obj = {
+            getEven: () => getEven(number),
+            getOdd: () => getOdd(number),
             get isEven() {
                 return isEven(number);
             },
